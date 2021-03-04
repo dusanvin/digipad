@@ -148,8 +148,10 @@
     @icons-size: 120px;
     @icons-text-size: 30px;
     .bs-callout {
+        flex-wrap: wrap;
         display: flex;
-        align-items: stretch;
+        align-items: center;
+        justify-content: center;
         margin: 0;
         //background: rgba(255,255,255,0.6);
         background: transparent
@@ -308,16 +310,25 @@
         }
     }
 
-    @media  only screen and (max-width: 575px) {
-            .cp-app-grid {
-                display: flex;
-                flex-wrap: wrap;
-                & > a {
-                    margin: 20px;
-                    margin-right: 2em;
-                    margin-left: 2em;
+    @media only screen and (max-width: 576px) {
+        .cp-app-grid {
+            flex-wrap: wrap;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            & > a {
+                margin: 20px;
+                margin-right: 1em;
+                margin-left: 1em;
+            }
+        }
+        .cp-page-index {
+            .cp-title {
+                h1 {
+                    text-align: center !important;
                 }
             }
+        } 
     }
 }
 

@@ -35,6 +35,9 @@ body {
                 background-color: white;
                 border-radius: 4px;
                 box-shadow: 0 0 6px rgba(54, 54, 57, 0.4);
+                padding-bottom: 3em;
+                padding-left: 2em;
+                padding-right: 2em;
             }
             .extra {
                 justify-content: end;
@@ -332,6 +335,45 @@ body {
         .cp-register-btn {
             margin-right: 13px;
             text-align: center;
+        }
+    }
+
+    @media only screen and (max-width: 767px) {
+        .cp-container {
+            margin-top: 0 !important;
+            padding-top: 0 !important;
+            #data {
+                padding-bottom: 3em !important;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 576px) {
+        .cp-container {
+            #data {
+                padding-left: 0.5em !important;
+                padding-right: 0.5em !important;
+            }
+            #userForm {
+                margin-left: 0.5em;
+                margin-right: 0.5em;
+            }
+            p {
+                text-align: center !important;
+                margin-bottom: 3.5em;
+            }
+            .left {
+                margin-bottom: 0;
+            }
+        }
+        h1 {
+            text-align: center !important;
+        }
+        h2 {
+            text-align: center !important;
+        }
+        p {
+            text-align: center !important;
         }
     }
 

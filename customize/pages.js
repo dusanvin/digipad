@@ -102,7 +102,7 @@ define([
                         footLink('mailto:digillab@zlbib.uni-augsburg.de', null, 'Kontakt'),
                     ]),
                     footerCol('footer_legal', [
-                        footLink('/terms.html', 'footer_tos'),
+                        footLink('/terms.html', null, 'Nutzung'),
                         footLink('/privacy.html', 'privacy'),
                         AppConfig.imprint ? footLink(imprintUrl, 'imprint') : undefined,
                     ]),
