@@ -152,7 +152,7 @@ define([
                             h('img', { src: '/customize/cryptpad-new-logo-colors-logoonly.png?' + urlArgs }),
                             h('h1', 'Digi:Pad'),
                             //h('h2', 'Das Cryptpad des DigiLLab der UniA'),
-                            h('p', 'Erstellen, bearbeiten und teilen Sie kollaborative Dokumente im Cryptpad des DigiLLab der Universität Augsburg. Ihre Daten bleiben anonym und Ihre Dokumente verschlüsselt. Von uns, für Sie zum Schutz Ihrer Privatsphäre.'),
+                            h('p', 'Erstelle, bearbeite und teile kollaborative Dokumente im Cryptpad des DigiLLab der Universität Augsburg. Deine Daten bleiben anonym und deine Dokumente verschlüsselt. Von uns, für dich zum Schutz deiner Privatsphäre.'),
                             //h('p', Msg.main_catch_phrase),
                             //h('p', 'Warning: TEST installation'),
                             //h('p', 'Your data may get wiped ~September 2020!')

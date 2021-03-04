@@ -68,7 +68,7 @@ define([
                     footerCol(null, [
                         h('div.cp-bio-foot', [
                             //h('p', Msg.main_footerText),
-                            h('p', 'Mit Cryptpad können Sie kollaborative Dokumente erstellen, um Ihre Ideen gemeinsam zu verwirklichen.'),
+                            h('p', 'Mit Cryptpad kannst du kollaborative Dokumente erstellen, um deine Ideen gemeinsam zu verwirklichen.'),
                             languageSelector()
                         ])
                     ], ''),

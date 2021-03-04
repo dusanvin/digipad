@@ -19,6 +19,41 @@ body {
     @infopages_infobar-height: 64px;
     @infopages_padding: 32px;
 
+    #cp-main {
+        color: #FFF;
+        //background: linear-gradient( @background_darker, @background_lighter ), url('/customize/IMG_9372_klein.jpg');
+        background: linear-gradient(to right, rgb(53, 92, 125), rgb(108, 91, 123), rgb(192, 108, 132));
+        .cp-container {
+            min-height: 75vh;
+            margin-top: 6em;
+            background: transparent !important;
+            .align-items-center {
+                background-color: transparent !important;
+                box-shadow: none;
+            }
+            #userForm {
+                background-color: white;
+                box-shadow: 0 5px 15px rgb(69 145 196 / 30%);
+            }
+        }
+        #data {
+            background: transparent !important;
+            h2 {
+                color: white;
+                font-size: 29px;
+                font-weight: 600;
+                text-align: left;
+                line-height: 1.4em;
+                margin-top: 0em;
+                margin-bottom: 0.7em;
+            }
+            p {
+                font-size: 14px;
+                line-height: 1.7em;
+            }
+        }
+    }
+
     // Basic setup for info pages, this should be used at the global level
     background-color: @colortheme_info-background;
     a {
@@ -173,9 +208,13 @@ body {
     // navigation top bar
     .navbar {
         background: #fff;
+        background-color: white !important;
+        box-shadow: 0 0 6px rgba(54,54,57,.4);
+        width: 100%;
         .navbar-brand {
             display: block;
-            background-image: url(/customize/CryptPad_logo_color.svg);
+            /*background-image: url(/customize/CryptPad_logo_color.svg);*/
+            background-image: url(/customize/Uni_Aug_Logo_DigiLLab_CMYK-01.png);
             background-repeat: no-repeat;
             background-size: contain;
             height: 50px;
@@ -185,7 +224,7 @@ body {
             }
             margin-right: 0;
         }
-        a {
+        /*a {
             border: 2px solid transparent;
             white-space: nowrap;
         }
@@ -205,6 +244,34 @@ body {
         .navbar-toggler {
             margin-top: 10px;
             color: #4591C4;
+        }*/
+        a {
+            color: #424242;
+            font-size: 14px;
+            margin-left: 1em;
+            &:visited {
+                color: rgba(255,255,255,.9);
+            };
+        }
+        .nav-link {
+            &:hover {
+                background-color: #424242;
+                border-radius: 35px;
+                color: white;
+                //transform: scale(1.05);
+            };
+        }
+        .cp-register-btn {
+            border: 1px solid #424242;
+            border-radius: 35px;
+        }
+        .cp-login-btn:hover {
+            background-color: #f6f8fa;
+            color: #424242;
+        }
+        .navbar-toggler {
+            margin-top: 10px;
+            color: #fff;
         }
     }
     @media (max-width: 1000px) {
