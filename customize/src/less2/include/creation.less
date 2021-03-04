@@ -1,0 +1,450 @@
+@import (reference) "./browser.less";
+@import (reference) "./colortheme-all.less";
+@import (reference) "./tools.less";
+@import (reference) './icon-colors.less';
+@import (reference) "./avatar.less";
+
+.creation_vars(
+    @color: @colortheme_default-color,
+    @bg-color: @colortheme_default-bg
+) {
+    @creation-color: @color;
+    @creation-bg-color: @bg-color;
+};
+
+.creation_main(
+    @color: @colortheme_default-color,
+    @bg-color: @colortheme_default-bg
+) {
+    --LessLoader_require: LessLoader_currentFile();
+    .creation_vars(@color, @bg-color);
+    --creation-color: @color;
+    --creation-bg-color: @bg-color;
+}
+& {
+    .creation_vars();
+    @colortheme_creation-modal-bg: #fff;
+    @colortheme_creation-modal: #666;
+    @colortheme_creation-modal-title: @colortheme_loading-bg;
+
+    #cp-creation-container {
+        position: absolute;
+        z-index: 100000000; // #loading * 10
+        top: 0px;
+        //background: @colortheme_loading-bg;
+        background: linear-gradient(to right, @colortheme_loading-bg 0%, @colortheme_loading-bg 50%, @colortheme_loading-bg-alt 50%, @colortheme_loading-bg-alt 100%);
+        color: @colortheme_loading-color;
+        display: flex;
+        flex-flow: column; /* we need column so that the child can shrink vertically */
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        .cp-creation-logo {
+            height: 300px;
+            width: 300px;
+            margin-top: 50px;
+            flex: 0 1 auto; /* allows shrink */
+            min-height: 0;
+            text-align: center;
+            img {
+                max-width: 100%;
+                max-height: 100%;
+            }
+        }
+    }
+    #cp-creation {
+        overflow: auto;
+        text-align: center;
+        background: @colortheme_creation-modal-bg;
+        color: @colortheme_creation-modal;
+        font: @colortheme_app-font;
+        outline: none;
+        width: 700px;
+        max-width: 90vw;
+        height: 550px;
+        max-height: calc(~"100vh - 20px");
+        margin: 50px;
+        flex-shrink: 0;
+        display: flex;
+        flex-flow: column;
+
+        & > div {
+            width: 100%;
+            max-width: 100%;
+            margin: auto;
+            text-align: left;
+        }
+
+        .cp-creation-title {
+            color: @colortheme_creation-modal-title;
+            font-weight: bold;
+            margin: 15px;
+        }
+
+        .cp-creation-create {
+            margin-top: 0px;
+            button {
+                .tools_unselectable();
+                padding: 15px;
+                background: linear-gradient(to right, @colortheme_logo-2, @colortheme_logo-1);
+                color: #FFF;
+                font-weight: bold;
+                margin: 3px 10px;
+                border: none;
+                cursor: pointer;
+                outline: none;
+                width: 100%;
+                &:hover {
+                    background: linear-gradient(to right, lighten(@colortheme_logo-2, 5%), lighten(@colortheme_logo-1, 5%));
+                    //background: darken(@creation-button, 5%);
+                    //background: lighten(@creation-button, 5%);
+                }
+            }
+        }
+        .cp-creation-create {
+            text-align: center;
+            //margin: auto;
+            //margin-top: 20px;
+            width: 400px;
+            max-width: 100%;
+            button {
+                margin: 0;
+            }
+        }
+
+        #cp-creation-form {
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            flex: 1 0 auto;
+            justify-content: space-around;
+            & > div {
+                width: 400px;
+                max-width: 100%;
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                font-size: 16px;
+                //margin: 10px 0;
+                min-height: 28px;
+                line-height: 28px;
+                label {
+                    flex: 1;
+                    // Force wrap when the other element in the line is 100% (IE bug):
+                    min-width: 1px;
+                }
+                input[type="checkbox"] {
+                    &+ label {
+                        margin-bottom: 0;
+                        flex: 1;
+                        padding: 0 10px;
+                    }
+                }
+            }
+            .cp-creation-help, .cp-creation-warning {
+                font-size: 18px;
+                color: @colortheme_form-warning;
+                &:hover {
+                    color: @colortheme_form-warning-hov;
+                    text-decoration: none;
+                }
+            }
+            .cp-creation-slider {
+                display: block;
+                overflow: hidden;
+                max-height: 0px;
+                max-width: 0px;
+                //margin-top: 10px;
+                &.active {
+                    transition: max-height 0.5s ease-in-out;
+                    max-width: none;
+                    max-height: 100px;
+                }
+                input, select {
+                    vertical-align: middle;
+                }
+            }
+
+            input, select {
+                font-size: 14px;
+                border: 1px solid @colortheme_form-border;
+                height: 26px;
+                line-height: 26px;
+                background-color: @colortheme_form-bg;
+                color: @colortheme_form-color;
+            }
+
+            .cp-creation-teams {
+                display: none !important;
+                .cp-creation-teams-grid {
+                    display: flex;
+                    flex-wrap: wrap;
+                    padding: 0 2px;
+                    flex: 1;
+                }
+                .cp-creation-team {
+                    .avatar_main(25px);
+                    width: 140px;
+                    height: 35px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 5px;
+                    cursor: default;
+                    font: @colortheme_app-font;
+                    color: @colortheme_modal-fg;
+                    margin: 0 1px;
+
+                    .tools_unselectable();
+
+                    &.cp-selected {
+                        background-color: @colortheme_alertify-primary;
+                        color: @colortheme_alertify-primary-text;
+                    }
+                    .cp-creation-team-avatar {
+                        .fa {
+                            font-size: 25px;
+                        }
+                    }
+                    .cp-creation-team-name {
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        width: 100%;
+                        text-align: center;
+                        line-height: 18px;
+                    }
+                    border: 1px solid @colortheme_alertify-primary;
+                }
+            }
+
+            .cp-creation-expire {
+                .cp-creation-expire-picker {
+                    text-align: center;
+                    input {
+                        width: 50px;
+                        margin: 0 5px;
+                    }
+                    select {
+                        margin-right: 5px;
+                    }
+                }
+                &.active {
+                    label {
+                        flex: none;
+                    }
+                    .cp-creation-slider {
+                        flex: 1;
+                    }
+                }
+            }
+            .cp-creation-password {
+                .cp-creation-password-picker {
+                    text-align: center;
+                    width: 100%;
+                    .cp-password-container {
+                        input {
+                            width: 150px;
+                            padding: 0 5px;
+                        }
+                        label {
+                            flex: none;
+                        }
+                    }
+                }
+            }
+            .cp-creation-settings {
+                button {
+                    margin: 0;
+                    padding: 0;
+                }
+                .cp-filler { flex: 1; }
+            }
+
+            div.cp-creation-remember {
+                .cp-creation-remember-help {
+                    width: 100%;
+                    //font-style: italic;
+                    font-size: 12px;
+                    font-weight: bold;
+                    color: @colortheme_form-bg;
+                    line-height: 20px;
+                    .fa {
+                        margin-right: 10px;
+                    }
+                }
+            }
+            div.cp-creation-template {
+                width: 100%;
+                //flex: 1 0 auto;
+                flex-wrap: nowrap;
+                .cp-creation-template-more {
+                    font-size: 30px;
+                    cursor: pointer;
+                    margin: 0 5px;
+                    text-align: center;
+                    &:first-child {
+                        left: 5px;
+                    }
+                    &:last-child {
+                        right: 5px;
+                    }
+                    &:hover {
+                        color: #888;
+                    }
+                    &.hidden {
+                        visibility: hidden;
+                    }
+                }
+            }
+            .cp-creation-template-container {
+                width: 100%;
+                flex: 1;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                //overflow-y: auto;
+                align-items: center;
+                .cp-creation-template-element {
+                    box-shadow: 2px 2px 7px @colortheme_form-border;
+                    width: 135px;
+                    padding: 5px;
+                    margin: 5px;
+                    display: inline-flex;
+                    flex-flow: column;
+
+                    box-sizing: content-box;
+
+                    text-align: left;
+                    line-height: 1em;
+                    cursor: pointer;
+
+                    color: black;
+                    border: 1px solid transparent;
+
+                    &.cp-creation-template-selected, &:hover {
+                        color: @creation-color !important;
+                        color: var(--creation-color) !important;
+                        background-color: @creation-bg-color !important;
+                        background-color: var(--creation-bg-color) !important;
+                        .fa, .cptools {
+                            color: @creation-color;
+                            color: var(--creation-color);
+                        }
+                    }
+
+                    transition: all 0.1s;
+
+                    align-items: center;
+
+                    img {
+                        max-width: 100px;
+                        max-height: 100px;
+                        background: #fff;
+                    }
+
+                    .cp-creation-template-element-name {
+                        flex: 1;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        min-height: 20px;
+                        height: 20px;
+                        line-height: 20px;
+                        margin-top: 5px;
+                        max-width: 100%;
+                    }
+                    .fa, .cptools {
+                        color: @creation-bg-color;
+                        color: var(--creation-bg-color);
+                        cursor: pointer;
+                        width: 100px;
+                        height: 100px;
+                        font-size: 70px;
+                        text-align: center;
+                        line-height: 100px;
+                    }
+                }
+            }
+        }
+
+        .cp-creation-deleted-container {
+            text-align: center;
+            .cp-creation-deleted {
+                margin: 0 10px;
+                background: @colortheme_loading-bg;
+                color: @colortheme_loading-color;
+                padding: 10px;
+                text-align: center;
+                font-weight: bold;
+                display: inline-block;
+            }
+        }
+    }
+
+        @media screen and (max-height: 700px) {
+            #cp-creation-container {
+                .cp-creation-logo {
+                    //flex-shrink: 0;
+                    display: none;
+                }
+            }
+        }
+        @media screen and (max-width: 500px) {
+            #cp-creation {
+                #cp-creation-form {
+                    & > div {
+                        width: 95%;
+                        margin: 10px auto;
+                    }
+                    .cp-creation-expire {
+                        &.active {
+                            label {
+                                flex: 1;
+                            }
+                            .cp-creation-slider {
+                                flex: none;
+                                order: 10;
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        @media screen and (max-width: @browser_media-medium-screen) {
+            #cp-creation {
+                height: auto;
+                #cp-creation-form {
+                    div.cp-creation-template {
+                        margin: 0;
+                        padding: 5px;
+                        .cp-creation-template-container {
+                            .cp-creation-template-element {
+                                flex-flow: row;
+                                margin: 1px;
+                                padding: 5px;
+                                width: 155px;
+                                img {
+                                    display: none;
+                                }
+                                .fa {
+                                    font-size: 18px;
+                                    width: 20px;
+                                    height: 20px;
+                                    line-height: 20px;
+                                    display: inline !important;
+                                }
+                                .cp-creation-template-element-name {
+                                    margin: 0;
+                                    margin-left: 5px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+}

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title data-localization="main_title">CryptPad: Zero Knowledge, Collaborative Real Time Editing</title>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="icon" type="image/png" href="/customize/main-favicon.png" id="favicon"/>
+    <style>
+        html {
+            height: 100%;
+        }
+        body {
+            transition: opacity 0.75s, visibility 0s 0.75s;
+            visibility: visible;
+            position: fixed;
+            z-index: 10000000;
+            top: 0px;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+            background: linear-gradient(to right, #326599 0%, #326599 50%, #4591c4 50%, #4591c4 100%);
+            color: #fafafa;
+            font-size: 1.5em;
+            opacity: 1;
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
+            font-family: monospace;
+        }
+        #cp-logo {
+            max-width: 300px;
+        }
+    </style>
+</head>
+
+<body class="html">
+
+<p style='margin:0cm;margin-bottom:.0001pt'><b><span style='font-size:20.0pt'>Impressum / Imprint</span></b><span
+style='font-size:20.0pt'><o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><b><span style='font-size:12.0pt'>Dienstanbieter
+dieser Seite ist das Kompetenzzentrum für digitales Lehren und Lernen am <span
+class=SpellE>ZLbiB</span> der Universität Augsburg.</span></b><span
+style='font-size:12.0pt'><o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><b>Redaktionell verantwortlich
+gemäß §5 TMG:</b><o:p></o:p></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'>Dr. Carl-Christian Fey<o:p></o:p></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'>Kompetenzzentrum für digitales Lehren
+und Lernen am <span class=SpellE>ZLbiB</span> der Universität Augsburg<o:p></o:p></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'>Universitätsstraße 10<o:p></o:p></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'>86135 Augsburg<o:p></o:p></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><b>E-Mail:</b> <a
+href="mailto:digillab@zlbib.uni-augsburg.de">digillab@zlbib.uni-augsburg.de</a><o:p></o:p></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'>&nbsp;<o:p></o:p></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><b>Ladungsfähige Anschrift gemäß
+TMG:</b><o:p></o:p></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'>Kompetenzzentrum für digitales
+Lehren und Lernen am <span class=SpellE>ZLbiB</span> der Universität Augsburg<o:p></o:p></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'>Universitätsstraße 10<o:p></o:p></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'>86135 Augsburg<o:p></o:p></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><span style='font-size:18.0pt'>&nbsp;<o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><b><span style='font-size:18.0pt'>Haftung
+für Inhalte</span></b><span style='font-size:18.0pt'><o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'>Der Betreiber hat alle in seinem
+Bereich bereitgestellten Informationen nach bestem Wissen und Gewissen
+erarbeitet und geprüft. Es wird jedoch keine Gewähr für die Aktualität,
+Richtigkeit, Vollständigkeit oder Qualität und jederzeitige Verfügbarkeit der
+bereitgestellten Informationen übernommen.<o:p></o:p></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'>&nbsp;<o:p></o:p></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'>Für etwaige Schäden, die beim
+Aufrufen oder Herunterladen von Daten durch Computerviren oder der Installation
+oder Nutzung von Software verursacht werden, wird nicht gehaftet.<o:p></o:p></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'>&nbsp;<o:p></o:p></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'>Namentlich gekennzeichnete
+Internetseiten und Kommentare geben die Auffassungen und Erkenntnisse der
+abfassenden Personen wieder. Der Betreiber behält es sich ausdrücklich vor,
+einzelne Webseiten, Kommentare oder das gesamte Angebot ohne gesonderte
+Ankündigung zu verändern, zu ergänzen, zu löschen oder die Veröffentlichung
+zeitweise oder endgültig einzustellen.<o:p></o:p></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'>&nbsp;<o:p></o:p></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><b><span style='font-size:18.0pt'>Links
+und Verweise</span></b><span style='font-size:18.0pt'><o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'>Der Betreiber ist nur für die
+„eigenen Inhalte“, die er zur Nutzung bereithält, nach den einschlägigen
+Gesetzen verantwortlich.<o:p></o:p></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'>Von diesen eigenen Inhalten sind
+Querverweise („Links“) auf die Webseiten anderer Anbieter zu unterscheiden.
+Durch den Querverweis vermittelt der Betreiber lediglich den Zugang zur Nutzung
+dieser Inhalte.<o:p></o:p></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'>Für diese „fremden“ Inhalte ist er
+nicht verantwortlich, da er die Übermittlung der Information nicht veranlasst,
+den Adressaten der übermittelten Informationen nicht auswählt und die
+übermittelten Informationen auch nicht ausgewählt oder verändert hat. Auch eine
+automatische kurzzeitige Zwischenspeicherung dieser „fremden Informationen“
+erfolgt wegen der gewählten Aufruf- und Verlinkungsmethodik nicht, so dass sich
+auch dadurch keine Verantwortlichkeit des Betreibers für diese fremden Inhalte
+ergibt.<o:p></o:p></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'>&nbsp;<o:p></o:p></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'>Bei der erstmaligen Verknüpfung mit
+diesen Internetangeboten haben die Autoren der jeweiligen Webseiten oder die
+Redaktion des Betreibers den fremden Inhalt jedoch daraufhin überprüft, ob
+durch ihn eine mögliche zivilrechtliche oder strafrechtliche Verantwortlichkeit
+ausgelöst wird. Sobald der Betreiber jedoch feststellt oder von anderen darauf
+hingewiesen wird, dass ein konkretes Angebot, zu dem es einen Link
+bereitgestellt hat, eine zivil- oder strafrechtliche Verantwortlichkeit auslöst,
+wird es den Verweis auf dieses Angebot unverzüglich aufheben, soweit es
+technisch möglich und zumutbar ist.<o:p></o:p></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'>&nbsp;<o:p></o:p></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'>Für illegale, fehlerhafte oder unvollständige
+Inhalte und insbesondere für Schäden, die aus der Nutzung oder Nichtnutzung von
+Informationen Dritter entstehen, haftet allein der jeweilige Anbieter der
+Seite, auf welche verwiesen wurde.<o:p></o:p></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'>&nbsp;<o:p></o:p></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><b><span style='font-size:18.0pt'>Urheberrecht</span></b><span
+style='font-size:18.0pt'><o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><b><span style='font-size:16.0pt'>Lizenz</span></b><span
+style='font-size:16.0pt'><o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'>Die durch den Seitenbetreiber erstellten
+Inhalte und Werke auf diesen Seiten unterliegen - soweit nicht gesondert
+gekennzeichnet, dem deutschen Urheberrecht.<o:p></o:p></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'>&nbsp;<o:p></o:p></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><span class=SpellE><b><span
+style='font-size:16.0pt'>Credits</span></b></span><span style='font-size:16.0pt'><o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'>Soweit die Inhalte auf dieser Seite
+nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet.
+Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Solltest du
+trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um
+einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden
+wir derartige Inhalte umgehend entfernen.<o:p></o:p></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'>&nbsp;<o:p></o:p></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><b><span style='font-size:18.0pt'>Datenschutz</span></b><span
+style='font-size:18.0pt'><o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'>Die Nutzung des Webangebots ist
+ohne Angabe personenbezogener Daten möglich. <o:p></o:p></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'>&nbsp;<o:p></o:p></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'>Metadaten, die bei der Verbindung
+auf unsere Server übermittelt werden (z.B. die IP-Adresse oder Informationen
+über den verwendeten Browser, <span class=SpellE>Referrer</span>, etc.) können
+in unseren Serverlogs gespeichert werden.<o:p></o:p></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'>&nbsp;<o:p></o:p></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'>Wir weisen darauf hin, dass die
+Datenübertragung im Internet allgemein (z.B. bei der Kommunikation per E-Mail)
+Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem
+Zugriff durch Dritte ist nicht möglich.<o:p></o:p></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><span style='font-size:12.0pt'>&nbsp;<o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><b><span style='font-size:12.0pt'>Auskunftsrecht</span></b><span
+style='font-size:12.0pt'><o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'>Du hast jederzeit das Recht auf
+Auskunft über die bezüglich Ihrer Person gespeicherten Daten, deren Herkunft
+und Empfänger sowie den Zweck der Speicherung. Auskunft über die gespeicherten
+Daten gibt Ihnen die Piratenpartei Deutschland. Wende dich dazu bitte an
+unseren <a href="http://wiki.piratenpartei.de/Datenschutzbeauftragter">Datenschutzbeauftragten</a>.<o:p></o:p></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><span style='font-size:16.0pt'>&nbsp;<o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><b><span style='font-size:16.0pt'>Einbindung
+von Diensten und Inhalten Dritter</span></b><span style='font-size:16.0pt'><o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'>Es kann vorkommen, dass innerhalb
+dieses Webangebots Inhalte Dritter, wie zum Beispiel Videos von YouTube,
+Kartenmaterial von Google-Maps, RSS-Feeds oder Grafiken von anderen Webseiten
+eingebunden werden.<o:p></o:p></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'>&nbsp;<o:p></o:p></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'>In diesen Fällen haben wir keinen
+Einfluss darauf, falls die Dritt-Anbieter die IP-Adresse oder Eigenschaften des
+verwendeten Browsers speichern und auswerten.<o:p></o:p></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><span style='font-size:18.0pt'>&nbsp;<o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><b><span style='font-size:18.0pt'>Sonstiges</span></b><span
+style='font-size:18.0pt'><o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'>Der Nutzung von im Rahmen der
+Impressumspflicht veröffentlichten Kontaktdaten durch Dritte zur Übersendung
+von nicht ausdrücklich angeforderter Werbung und Informationsmaterialien wird
+hiermit widersprochen.<o:p></o:p></p>
+
+</body>

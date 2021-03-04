@@ -1,0 +1,130 @@
+@import (reference) "../include/infopages.less";
+@import (reference) "../include/colortheme-all.less";
+
+&.cp-page-features {
+    .infopages_main();
+
+    #cp-main {
+        background-color: #fff;
+    }
+    .cp_cont_features {
+        padding-top: 3em;
+        padding-bottom: 3em;
+        background-image: url('/customize/images/cover-features.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        h1 {
+            font-weight: 700;
+            color: #fff;
+        }
+    }
+    .cp-features-register {
+        text-align: center;
+        padding: 20px;
+    }
+    .cp-features-register-button {
+        font-size: 20px;
+        color: #fff;
+        background: @cryptpad_color_blue;
+        border: 2px solid @cryptpad_color_blue;
+        border-radius: 0;
+        &:hover {
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+        padding: 0.5em 1em;
+    }
+    .cp-features-web {
+        .card {
+            box-shadow: 0 5px 15px rgba(69, 145, 196, 0.3);
+            border: none;
+            .card-body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-flow: column;
+                h3 {
+                    margin: 0;
+                }
+                &.cp-pricing {
+                    div {
+                        font-size: 1.2em;
+                        color: @cryptpad_color_blue;
+                        &:first-child {
+                            font-weight: bold;
+                        }
+                        &:last-child {
+                            font-size: 1em;
+                        }
+                    }
+                }
+            }
+        }
+        h3 {
+            color: #fff;
+        }
+        .list-group {
+            li {
+                display: flex;
+                padding-left: 0;
+                padding-right: 5px;
+            }
+            div {
+                &.cp-check {
+                    width: 30px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    &:before {
+                        content: "\f00c";
+                        font-family: "FontAwesome";
+                        font-size: 14px;
+                        color: @cryptpad_color_blue;
+                    }
+                }
+                &.cp-content {
+                    flex: 1;
+                    display: flex;
+                    flex-flow: column;
+                }
+                &.cp-feature {
+                    font-weight: bold;
+                }
+            }
+        }
+        div.cp-note {
+            font-size: 0.8em;
+        }
+        a.voted {
+            opacity: 0.6;
+            margin-left: 15px;
+            &:hover {
+                opacity: 1;
+            }
+        }
+        .list-group-item {
+            border-color: rgba(69, 145, 196, 0.125);
+        }
+    }
+    .cp-anon-user {
+        .card-body {
+            &:first-of-type {
+                background-color: @cryptpad_color_blue;
+            }
+        }
+    }
+    .cp-regis-user {
+        @media (max-width:575px) {
+            margin-top: 3em;
+        }
+        .card-body {
+            &:first-of-type {
+                background: #4591C4;
+                background: -webkit-linear-gradient(to right, #FF7C4F, #4592C4); // lesshint duplicateProperty: false
+                background: linear-gradient(to right, #FF7C4F, #4592C4); // lesshint duplicateProperty: false
+            }
+        }
+    }
+}
+

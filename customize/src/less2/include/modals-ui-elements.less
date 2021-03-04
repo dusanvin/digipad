@@ -1,0 +1,173 @@
+@import (reference) "./colortheme-all.less";
+@import (reference) "./variables.less";
+.modals-ui-elements_main() {
+    --LessLoader_require: LessLoader_currentFile();
+}
+& {
+    .cp-spacer {
+        height: @variables_padding;
+    }
+    // Share modal
+    .msg.cp-inline-radio-group {
+        overflow: unset !important;
+        padding: 0px @variables_padding;
+        .radio-group {
+            display: flex;
+            flex-direction: row;
+            &:not(:last-child) {
+                margin-bottom: 8px;
+            }
+            .cp-radio {
+                margin-right: 30px;
+            }
+        }
+    }
+
+    // Properties modal
+    .cp-app-prop {
+        margin-bottom: 10px;
+        .cp-app-prop-hint {
+            color: @cryptpad_text_col;
+            font-size: 0.8em;
+            margin-bottom: 5px;
+        }
+        .cp-app-prop-size-container {
+            height: 20px;
+            background-color: @colortheme_logo-2;
+            margin: 10px 0;
+            padding: 0;
+            div {
+                height: 20px;
+                margin: 0;
+                padding: 0;
+                background-color: #CCCCCC;
+            }
+        }
+        .cp-app-prop-size-legend {
+            color: @colortheme_modal-fg;
+            display: flex;
+            margin: 10px 0;
+            & > div {
+                display: flex;
+                align-items: center;
+                flex-basis: 50%;
+                margin: 0;
+                padding: 0;
+            }
+            .cp-app-prop-history-size-color, .cp-app-prop-contents-size-color {
+                display: inline-block;
+                height: 20px;
+                width: 20px;
+                margin-right: 10px;
+            }
+            .cp-app-prop-history-size-color {
+                background-color: #CCCCCC;
+            }
+            .cp-app-prop-contents-size-color {
+                background-color: @colortheme_logo-2;
+            }
+        }
+    }
+
+    .cp-app-prop-content {
+        color: @cryptpad_text_col;
+    }
+
+    // Access modal
+    .cp-overlay-container {
+        position: relative;
+        .cp-overlay {
+            position: absolute;
+            background-color: rgba(255,255,255,0.5);
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+    }
+
+    .cp-access-margin-right {
+        margin-right: 5px !important;
+    }
+
+    // teams invite modal
+    .cp-teams-invite-block {
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;
+    }
+    .cp-teams-invite-message {
+        resize: none;
+    }
+    .cp-teams-invite-alert {
+        margin-top: 10px;
+    }
+    .cp-teams-invite-spinner {
+        font-size: 1.2em;
+        .fa {
+            margin-right: 10px;;
+        }
+    }
+    .cp-teams-help {
+        margin-left: 10px;
+    }
+
+    // mediatag preview
+    #cp-mediatag-preview-modal {
+        .cp-modal {
+            display: flex;
+            justify-content: center;
+            .cp-mediatag-container {
+                width: 100%;
+                flex: 1;
+                min-width: 0;
+                overflow: auto;
+                media-tag {
+                    & > * {
+                        max-width: 100%;
+                        max-height: 100%;
+                    }
+                    video, iframe {
+                        margin-bottom: -5px;
+                    }
+                    button {
+                        line-height: 1.5;
+                    }
+                    & > iframe {
+                        width: 100%;
+                        height: 100%;
+                        min-height: 75vh;
+                    }
+                    & > .plain-text-reader {
+                        white-space: pre-wrap;
+                        text-align: left;
+                        word-break: break-word;
+                        color: @cryptpad_text_col;
+                        padding: 5px;
+                    }
+                }
+                pre.mermaid {
+                    overflow: unset;
+                    margin-bottom: 0;
+                }
+                .cp-spinner {
+                    border-color: @colortheme_logo-1;
+                    border-top-color: transparent;
+                }
+            }
+            .cp-mediatag-control {
+                align-self: center;
+                .fa {
+                    margin: 10px;
+                    cursor: pointer;
+                }
+            }
+            .cp-mediatag-outer {
+                display: flex;
+                height: 100%;
+                width: 100%;
+                align-items: center;
+            }
+        }
+    }
+}
