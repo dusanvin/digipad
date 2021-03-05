@@ -11,6 +11,7 @@ define([
                 h('div.row.align-items-center', [
                     h('div#data.hidden.col-md-6', Pages.setHTML(h('p.left'), Msg.main_info)),
                     h('div#userForm.form-group.hidden.col-md-6', [
+                        h('h1', Msg.login_login),
                         h('input.form-control#name', {
                             name: 'name',
                             type: 'text',
