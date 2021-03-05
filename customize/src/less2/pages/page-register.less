@@ -21,11 +21,17 @@
             }
             #register {
                 &.btn {
-                    padding: .5rem .5rem;
+                    //padding: .5rem .5rem;
+                    border: 1px solid #424242;
+                    border-radius: 35px;
+                    color: #424242;
+                    font-size: 14px;
+                    padding: .5rem 1rem;
                 }
-                margin-top: 16px;
-                font-size: 1.25em;
-                min-width: 30%;
+                //margin-top: 16px;
+                margin-top: 2em;
+                //font-size: 1.25em;
+                //min-width: 30%;
             }
         }
         padding-bottom: 3em;
@@ -39,11 +45,11 @@
     }
     .cp-register-wel {
         padding-top: 6em;
-        padding-bottom: 20em;
-        background-image: url(/customize/bkregister.jpg);
+        padding-bottom: 3em;
+        /*background-image: url(/customize/bkregister.jpg);
         background-size: cover;
         background-repeat: no-repeat;
-        background-position: center;
+        background-position: center;*/
         h1 {
             font-weight: 700;
             color: #fff;
@@ -53,18 +59,19 @@
 
     .cp-register-det {
         margin-top: -7em;
-        background: #fff;
-        box-shadow: 0 5px 15px rgba(69,145,196, 0.3);
+        //background: #fff;
+        background: transparent;
+        //box-shadow: 0 5px 15px rgba(69,145,196, 0.3);
 
         #data {
             // Old browsers
-            background: #4591C4;
+            background: transparent !important;
 
             // Chrome 10-25, Safari 5.1-6
-            background: -webkit-linear-gradient(to right, #FF7C4F, #4592C4); // lesshint duplicateProperty: false
+            //background: -webkit-linear-gradient(to right, #FF7C4F, #4592C4); // lesshint duplicateProperty: false
 
             // W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+
-            background: linear-gradient(to right, #FF7C4F, #4592C4); // lesshint duplicateProperty: false
+            //background: linear-gradient(to right, #FF7C4F, #4592C4); // lesshint duplicateProperty: false
 
             padding-top: 3em;
             padding-bottom: 7em;
@@ -74,11 +81,14 @@
                 color: #fff;
                 li {
                     margin-bottom: 1em;
+                    display: flex;
+                    align-items: center;
                 }
                 .fa {
-                    font-size: 1.5em;
-                    padding-right: 10px;
-                    color: #000;
+                    font-size: 2.5em;
+                    padding-right: 0.5em;
+                    //color: #000;
+                    color: white;
                 }
             }
             h3 {
@@ -97,8 +107,15 @@
                     border-color: @cryptpad_color_blue;
                 }
             }
+            #password-confirm {
+                margin-bottom: 1em !important;
+            }
             .checkbox-container {
                 color: @cryptpad_text_col;
+                margin-bottom: 0 !important;
+                &:first {
+                    margin-top:2em !important;
+                }
             }
         }
         .cp-login-register {
@@ -107,7 +124,9 @@
             border: 2px solid @cryptpad_color_blue;
             border-radius: 0;
             &:hover {
-                transform: scale(1.05);
+                //transform: scale(1.05);
+                color: white !important;
+                background-color: #424242;
             }
         }
     }
@@ -124,6 +143,8 @@
         }
         .cp-test-source {
             font-style: italic;
+            color: white;
+            margin-top: 1em;
         }
         .test-details {
             padding-left: 4em;
@@ -131,12 +152,15 @@
             background-repeat: no-repeat;
             background-position: left top;
             background-size: 3em;
-            color: @cryptpad_text_col;
+            //color: @cryptpad_text_col;
+            color: white;
+            font-size: 12px;
         }
 
     }
     #cp-main {
-        background: #fff;
+        /*background: #fff;*/
+        background: linear-gradient(to right, rgb(53, 92, 125), rgb(108, 91, 123), rgb(192, 108, 132));
     }
 }
 

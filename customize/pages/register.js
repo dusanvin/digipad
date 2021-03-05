@@ -23,6 +23,7 @@ define([
                     Pages.setHTML(h('p.register-explanation'), Msg.register_explanation)
                 ]),
                 h('div#userForm.form-group.hidden.col-md-6', [
+                    h('h1', Msg.login_register),
                     h('a', {
                         href: '/features.html'
                     }, Msg.register_whyRegister),
