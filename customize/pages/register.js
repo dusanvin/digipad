@@ -12,7 +12,8 @@ define([
                 h('div.container',[
                     h('div.row',[
                         h('div.col-12',[
-                            h('h1.text-center', Msg.register_header)
+                            //h('h1.text-center', Msg.register_header)
+                            //h('h2.text-center', 'Willkommmen zum Digi:Pad')
                         ])
                     ])
                 ])
