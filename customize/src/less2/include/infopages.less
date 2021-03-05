@@ -40,7 +40,7 @@ body {
                 padding-right: 2em;
             }
             .extra {
-                justify-content: end;
+                justify-content: center;
                 button {
                     margin-left: 1em;
                 }
@@ -160,6 +160,7 @@ body {
         //background-color: @cryptpad_color_grey;
         background-color: white;
         box-shadow: 0 0 6px rgba(54,54,57,.4);
+        margin-bottom: 0;
         .container {
             .col {
                 margin-top: 1em;
@@ -174,7 +175,6 @@ body {
         a:hover {
             color: #B52188;
         }
-        margin-bottom: 1em;
         ul.list-unstyled {
                 margin-top: 2em;
                 text-align: center;
@@ -307,17 +307,21 @@ body {
             border: 1px solid #424242;
             border-radius: 35px;
         }
+        .cp-login-btn {
+            text-align: center;
+        }
         .cp-login-btn:hover {
             background-color: #f6f8fa;
             color: #424242;
         }
         .navbar-toggler {
             margin-top: 10px;
-            color: #fff;
+            color: #424242;
         }
     }
     @media (max-width: 1000px) {
         #menuCollapse {
+            margin-top:2em;
             text-align: right;
     /*        @media (min-width: 576px) {
                 top: 100%;
@@ -345,6 +349,9 @@ body {
             #data {
                 padding-bottom: 3em !important;
             }
+            #userForm {
+                margin-bottom: 4em;
+            }
         }
     }
 
@@ -355,8 +362,10 @@ body {
                 padding-right: 0.5em !important;
             }
             #userForm {
-                margin-left: 0.5em;
-                margin-right: 0.5em;
+                margin-left: 1em;
+                margin-right: 1em;
+                padding-left: 1em !important;
+                padding-right: 1em !important;
             }
             p {
                 text-align: center !important;
